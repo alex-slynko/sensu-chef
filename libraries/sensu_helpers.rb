@@ -25,7 +25,9 @@ module Sensu
       end
 
       def gem_binary
-        if File.exists?("/opt/sensu/embedded/bin/gem")
+        if File.exists?("/opt/sensu/embedded/bin/gem.bat")
+          "/opt/sensu/embedded/bin/gem.bat"
+        elsif File.exists?("/opt/sensu/embedded/bin/gem")
           "/opt/sensu/embedded/bin/gem"
         else
           "gem"
